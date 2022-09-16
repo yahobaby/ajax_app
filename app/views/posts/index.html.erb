@@ -1,7 +1,13 @@
 <h1>AjaxApp</h1>
 <%= form_with url:  "/posts", method: :post,id: "form" do |form| %>
+
+<%# フォームに値が入力されたままであることを避け、投稿するたびにフォームの値をリセットし、フォームの値を取得するために、フォームにidを付与する %>
+  <%= form.text_field :content  , id: "content" %>
+
+<!--削除
   <%= form.text_field :content %>
-  
+!-->
+
   <%= form.submit '投稿する' , id: "submit" %>
 <% end %>
 
